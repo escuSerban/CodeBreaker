@@ -15,7 +15,6 @@ fun main() {
 
 // Here we evaluate the input according to our analyseGuess function
 fun playCB(differentLetters: Boolean, secret: String = generateSecret(differentLetters)) {
-    println(generateSecret(true))
     var evaluation: Analyse
 
     do {
