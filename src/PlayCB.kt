@@ -13,6 +13,7 @@ fun main() {
     playCB(differentLetters)
 }
 
+// Here we evaluate the input according to our analyseGuess function
 fun playCB(differentLetters: Boolean, secret: String = generateSecret(differentLetters)) {
     println(generateSecret(true))
     var evaluation: Analyse
@@ -40,6 +41,7 @@ fun playCB(differentLetters: Boolean, secret: String = generateSecret(differentL
     } while (!evaluation.isComplete())
 }
 
+// Extension function which proves to be very helpful when we evaluate the guess
 fun Analyse.isComplete(): Boolean = rightLocation == BOARD_LENGTH
 
 fun hasErrorsInInput(guess: String): Boolean {
@@ -47,6 +49,7 @@ fun hasErrorsInInput(guess: String): Boolean {
     return guess.length != BOARD_LENGTH || guess.any { it !in possibleLetters }
 }
 
+// Helper function that generates a different set of colors every time the game starts.
 fun generateSecret(differentLetters: Boolean): String {
     val chars = colors.toMutableList()
     return buildString {
