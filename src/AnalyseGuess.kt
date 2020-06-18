@@ -7,6 +7,7 @@ fun analyseGuess(secret: String, guess: String): Analyse {
     return Analyse(rightColor, wrongColor)
 }
 
+// Determines colors wrong located based on the guess input
 fun getColorMisplaced(secret: String, guess: String): Int {
     var letters = 0;
     var position = "";
@@ -34,6 +35,7 @@ fun getColorMisplaced(secret: String, guess: String): Int {
     return letters
 }
 
+// Helper function that counts either the right or wrong input color
 fun triesCount(position: String, letter: Char): Int {
     var count = 0
     for (i in position.indices) {
@@ -42,6 +44,7 @@ fun triesCount(position: String, letter: Char): Int {
     return count
 }
 
+// This method gets our colors placed in the right location
 fun getColorInRightLocation(secret: String, guess: String): Int {
     var locations = 0
     for (i in secret.indices) {
